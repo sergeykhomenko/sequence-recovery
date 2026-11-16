@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its archived experimental results, please cite
+  the version-specific Zenodo record associated with the release.
+type: software
+title: "Sequence Recovery: Graph-Conditioned Reconstruction of Learning Trajectories"
+version: 1.0.0
+date-released: 2026-11-16
+authors:
+  - family-names: Khomenko
+    given-names: Serhii
+    orcid: "https://orcid.org/0000-0001-7185-9101"
+    affiliation: "Kharkiv National University of Radio Electronics"
+repository-code: "https://github.com/sergeykhomenko/sequence-recovery"
+url: "https://github.com/sergeykhomenko/sequence-recovery"
+license: MIT
+abstract: >-
+  Research software for a controlled experiment on reconstructing masked
+  fragments of learning trajectories over synthetic prerequisite graphs.
+  The framework compares a random baseline, Markov chains of orders one to
+  five under different history budgets, and a graph-conditioned masked
+  autoencoder with directional message passing and a transformer.
+  It includes deterministic dataset generation, training and inference,
+  recovery and prerequisite-validity metrics, archived experimental results,
+  and reproducible course-level statistical analysis.
+keywords:
+  - learning trajectories
+  - sequence reconstruction
+  - prerequisite graphs
+  - predicate alphabets
+  - graph neural networks
+  - masked autoencoder
+  - Markov chains
+  - reproducible research

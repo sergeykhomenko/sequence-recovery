@@ -1,0 +1,19 @@
+{
+  "name": "base",
+  "seed": 1,
+  "graphs": {
+    "train": 180, "val": 20, "test": 40,
+    "size": {"min": 16, "max": 4096},
+    "entries_ratio": {"min": 0.02, "max": 0.05},
+    "min_prereq": 1,
+    "max_prereq": {"min": 2, "max": 8},
+    "decay": {"min": 0.7, "max": 0.9},
+    "symbols": {"charset": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", "length": 3}
+  },
+  "orders": {"markov": 1000, "ae": 200, "markov_budgets": [10, 100, 1000]},
+  "windows": {"min_length": 8, "max_length": 256},
+  "challenges_per_level": 50,
+  "ae_windows": {"train_per_graph": 2000, "val_per_graph": 200},
+  "ae": {"dim": 256, "gnn_layers": 4, "layers": 6, "heads": 8, "ffn": 1024, "random_features": 16,
+         "batch": 64, "steps": 30000, "lr": 0.0003, "warmup": 1000, "eval_every": 1000}
+}

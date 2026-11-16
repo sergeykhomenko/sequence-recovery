@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.12.13"
+          enable-cache: true
+          cache-dependency-glob: autoencoder/uv.lock
+      - name: Check formatting and static analysis
+        run: make check
+      - name: Validate citation metadata
+        run: uv tool run --from cffconvert==2.0.0 cffconvert --validate
+      - name: Verify archived research results
+        run: make verify-results
+      - name: Run Go and Python tests
+        run: make test
+      - name: Run the complete smoke experiment on CPU
+        run: make -j4 smoke DEVICE=cpu

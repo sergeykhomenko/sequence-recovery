@@ -1,0 +1,19 @@
+[project]
+name = "graph-ae"
+version = "1.0.0"
+description = "Graph-conditioned masked autoencoder that restores learning trajectories"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0", "scipy>=1.13", "torch>=2.6"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.17.5",
+]
+docs = [
+    "matplotlib>=3.11.2",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

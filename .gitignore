@@ -1,0 +1,30 @@
+# Generated datasets, predictions, and checkpoints.
+/out/
+*.pt
+*.pth
+
+# Python environments and caches.
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+*.egg-info/
+
+# Build output and coverage.
+/bin/
+/dist/
+/build/
+*.test
+coverage.out
+coverage.html
+
+# Local settings and credentials.
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
